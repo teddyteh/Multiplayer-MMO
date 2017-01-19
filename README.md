@@ -1,0 +1,10 @@
+# Multiplayer-MMO
+A simple prototype for a virtual world with map loading and character movement implemented. 
+
+## Screenshots
+![clients](https://media.giphy.com/media/26xBOVE1tQ3CX36OQ/source.gif)
+
+## Technologies
+- Node.js backend
+- Socket.io
+- Graphics and animations done using HTML5 canvas and vanilla Javascript
