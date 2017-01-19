@@ -1,0 +1,107 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Teddy's open multiplayer test</title>
+
+		<link href="styles/rpgui.css" rel="stylesheet" type="text/css" >
+		<link href="styles/lionbars.css" rel="stylesheet" type="text/css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="scripts/rpgui.js"></script>
+		<script src="scripts/jquery.lionbars.0.3.js"></script>
+
+		<style>
+			body {
+				background-color: #000000;
+			}
+			
+			#game-container, #message-container, #name-prompt, #main-menu {
+				visibility: hidden;
+			}
+			#game {
+  				display: table;
+  				margin: 0 auto;
+			}
+
+			.box {
+				width: 200px;
+				height: 200px;
+				overflow: auto;
+				}
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				$('.box').lionbars();
+			});
+		</script>
+	</head>
+
+	<body>
+		<audio id="music" loop="loop">  
+	   		<source src="audio/theme.ogg" />
+	   		<source src="audio/theme.mp3" />  
+		</audio>
+
+		<div id="game-container" class="rpgui-content">
+			<div class="rpgui-container framed rpgui-draggable" style="padding: 0px;">
+	            <canvas id="game""></canvas>
+	        </div>
+	    </div>
+
+	    <div id="message-container" class="rpgui-content">
+		    <div id="message" class="rpgui-container framed-golden-2 rpgui-draggable" style="width:250px; height:100px;"></div>
+	    </div>
+
+	    <div id="name-prompt" class="rpgui-content">
+	    	<div class="rpgui-container framed-golden" style="height:400px; width:260px; top: 50px; left: 350px;">
+	            <h1>Welcome</h1>
+	            <hr />
+
+	            <label>Your name:</label>
+	            <input id="playerName" type="text" name="FirstName" value="Bob" placeholder="Hero name">
+	            <br/><br/>
+
+	            <hr />
+	            <form action="">
+	                <label>Gender:</label>
+	                <br />
+					<input class="rpgui-radio" checked type="radio" name="sex" value="male"><label>Male</label>
+	                <br />
+					<input class="rpgui-radio" type="radio" name="sex" value="female"><label>Female</label>
+				</form>
+				<hr />
+
+            	<button id="goBtn" class="rpgui-button golden" type="button" style="width:100%"><p>Go</p></button>
+	        </div>
+	    </div>
+
+		<div id="main-menu" class="rpgui-content">
+	        <div class="rpgui-container framed rpgui-draggable" style="text-align:center; height:400px; width:250px; top: 50px; left: 50px;">
+	            <p>Main menu</p>
+	            <hr /><br />
+				
+				<div id="full-screen" class="rpgui-center">
+					<button class="rpgui-button" type="button" style="width:100%"><p>Full screen</p></button>
+				</div><br />
+
+				<label>Game volume:</label>
+	            <input id="volume-slider" class="rpgui-slider" type="range" min="0" max="100" step="25" value="50" style="width:100%">
+				<hr /><br />
+
+				<div id="hide-menu" class="rpgui-center">
+					<button class="rpgui-button" type="button" style="width:75%"><p>Hide menu</p></button>
+				</div>
+	        </div>
+	    </div>
+
+		<script src="scripts/pathfinder.js"></script>
+		<script src="scripts/player.js"></script>
+		<script src="scripts/socket.io.js"></script>
+		<script src="scripts/game.js"></script>
+		<script src="scripts/gui.js"></script>
+	</body>
+
+</html>
