@@ -8,3 +8,4 @@ A simple prototype for a virtual world with map loading and character movement i
 - Node.js backend
 - Socket.io
 - Graphics and animations done using HTML5 canvas and vanilla Javascript
+- [RPGUI](https://github.com/RonenNess/RPGUI)
